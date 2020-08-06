@@ -1,0 +1,87 @@
+Jayraj attended the campus placement drive conducted by Amazon. In the technical round the interviewer asked the candidate to write an algorithm to count the number of primes in a given range. Jayaraj wrote an algorithm as he is good at logic building. But the interviewer asked him to code it. But Jayaraj was not good at coding. So please help him in writing the code by submitting your solution to this problem
+
+Input Format
+
+Two space seperated Integers indicating the first and last values
+
+Constraints
+
+1<=first<=last<=10^12
+
+Output Format
+
+The count of prime number in that range
+
+Sample Input 0
+
+1 10
+Sample Output 0
+
+4
+Explanation 0
+
+The primes from 1 to 10 are 2,3,5,7
+Java Program - 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.lang.Math; 
+
+
+class Solution {
+    public static int isprime(long n)
+{
+     if(n==2||n==3)return 1;
+     if(n==1||n%2==0||n%3==0)return 0;
+     for(long i=5;i<=Math.sqrt(n);i+=6)
+     {
+         if(n%i==0||n%(i+2)==0)
+             return 0;
+     }
+     return 1;
+}
+    public static void main (String [] args){
+        Scanner sc = new Scanner (System.in); 
+        long c=0;
+        long a = sc.nextInt();
+        long b= sc.nextInt();
+    for(long i = a ; i <= b ; i++ )
+    {
+        if(isprime(i)== 1)
+            c++;
+    }
+    System.out.println(c);
+    }
+}
+
+
+
+C++ Program
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int isprime(unsigned long n)
+{
+     if(n==2||n==3)return 1;
+     if(n==1||n%2==0||n%3==0)return 0;
+     for(unsigned long i=5;i<=sqrt(n);i+=6)
+     {
+         if(n%i==0||n%(i+2)==0)return 0;
+     }
+     return 1;
+}
+
+int main() {
+    unsigned long a,b,c=0;
+    scanf("%lu%lu",&a,&b);
+    for(unsigned long i = a ; i <= b ; i++ )
+    {
+        if(isprime(i))
+            c++;
+    }
+    printf("%lu",c);
+    return 0;
+}
