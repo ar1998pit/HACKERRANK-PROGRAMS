@@ -1,0 +1,60 @@
+Your task is simple, write a program in Java to print the following pattern :
+N = 1
+1
+
+N = 2
+  1
+1 2 1
+  1
+  
+N = 3
+    1
+  1 2 1
+1 2 3 2 1
+  1 2 1
+    1
+    
+INPUT
+Input consists of many test cases.
+First line contains the number of test case T.
+Each of the test case lines consists of one number N for that test case.
+
+OUTPUT
+Print the pattern corresponding to the N value of each test case.
+Print a blank line between two test case outputs.
+
+CONSTRAINTS
+1 ≤ T, N ≤ 10
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t!=0)
+        {
+            int n=sc.nextInt();
+            for(int i=1;i<=n;i++)
+            {
+                for(int j=1;j<=2*(n-i);j++) System.out.print(" ");
+                for(int k=1;k<=i;k++) System.out.print(k+" ");
+                for(int k1=i-1;k1>=1;k1--) System.out.print(k1+" ");
+                System.out.print("\n");
+            }
+            for(int i=n-1;i>=1;i--)
+            {
+                for(int j=1;j<=2*(n-i);j++) System.out.print(" ");
+                for(int k=1;k<=i;k++) System.out.print(k+" ");
+                for(int k1=i-1;k1>=1;k1--) System.out.print(k1+" ");
+                System.out.print("\n");
+            }
+            t--;
+            System.out.print("\n");
+
+        }
+    }
+}
