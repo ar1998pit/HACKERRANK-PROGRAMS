@@ -1,0 +1,63 @@
+Input Format
+
+A single string denoting w.
+
+Constraints
+
+1 <= strlen(w) <= 100 w contains only alphabets a-z (lowercase).
+
+Output Format
+
+Print "Yes" if it is beautiful otherwise "No".
+
+Sample Input 0
+
+abacaba
+Sample Output 0
+
+Yes
+Explanation 0
+
+Every pair of consecutive characters consists of one vowel and one consonant, so the word is beautiful and we print Yes.
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String w = in.next();
+
+        int result = isBeautiful(w);
+
+        if (result == 1) {
+            System.out.print("Yes");
+        } else
+            System.out.print("No");
+
+    }
+
+    static int isBeautiful(String w) {
+        for (int i = 0; i < w.length() - 1; ++i) {
+            if (w.charAt(i) == w.charAt(i + 1)) {
+                return 0;
+            }
+            if ( ( isVowel(w.charAt(i)) == isVowel(w.charAt(i + 1)) && (isVowel(w.charAt(i)) == 1))) {
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    static int isVowel(char c) {
+        if ( (c == 'a') || (c == 'e') || (c == 'i') || (c == 'o') || (c == 'u') || (c == 'y') ) {
+            return 1;
+        }
+        return 0;
+    }
+
+}
