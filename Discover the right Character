@@ -1,0 +1,42 @@
+Given a positive integer, return its corresponding column title as it would appear in an Excel Spreadsheet.
+For Example :
+
+1 -> A
+2 -> B
+....
+....
+26 -> Z
+27 -> AA
+Input Format
+
+One integer denoting the column number.
+
+Constraints
+
+The integer size will be less than 32-bits.
+
+Output Format
+
+Output the corresponding column title.
+
+
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner (System.in);
+        int n= sc.nextInt();
+        String ret = "";
+    while (n != 0) {
+        ret = (char)('A'+(--n)%26) + ret;
+        n /= 26;
+    }
+    System.out.println(ret);
+    }
+}
