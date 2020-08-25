@@ -1,0 +1,9 @@
+SinglyLinkedListNode node = new SinglyLinkedListNode(data);
+if (llist == null) {
+     // Do nothing
+} else {
+    node.next = llist;
+}
+ return node;
+
+    }
