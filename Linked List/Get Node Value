@@ -1,0 +1,17 @@
+ static int getNode(SinglyLinkedListNode head, int positionFromTail) {
+  SinglyLinkedListNode fast = head;
+        SinglyLinkedListNode slow = head;
+        
+        int pos = 0;
+        while (pos < positionFromTail) {
+            fast = fast.next;
+            pos++;
+        }
+        while (fast.next!=null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow.data;
+
+    }
